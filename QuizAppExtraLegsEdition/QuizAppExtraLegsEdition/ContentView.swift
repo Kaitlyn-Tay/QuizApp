@@ -17,6 +17,9 @@ struct ContentView: View {
             ZStack {
                 Color(.systemBackground)
                 VStack(alignment: .center) {
+                    ProgressView(value: Double(questionIndex),
+                                             total: Double(TestQuizQuestions.count))
+                                    .padding()
                     Text(TestQuizQuestions[questionIndex].title)
                         .padding()
                         .font(.largeTitle)
