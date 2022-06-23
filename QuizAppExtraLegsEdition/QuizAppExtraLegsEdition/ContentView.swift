@@ -16,14 +16,14 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color(.systemBackground)
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     Text(TestQuizQuestions[questionIndex].title)
                         .padding()
                         .font(.largeTitle)
                         .foregroundColor(.white)
-                        .background(.green)
+                        .background(.gray)
                         .cornerRadius(10)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         HStack{
                             Button {
                                 if TestQuizQuestions[questionIndex].correctAns == 1{
@@ -35,11 +35,12 @@ struct ContentView: View {
                                     isAlertShown = true
                                 }
                             } label: {
+                                Image(systemName: "square.fill")
+                                    .foregroundColor(.red)
+                                    .font(.largeTitle)
                                 Text(TestQuizQuestions[questionIndex].option1)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(.red)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.red)
+                                    .font(.largeTitle)
                                     .cornerRadius(10)
                             }
                             Button {
@@ -52,11 +53,12 @@ struct ContentView: View {
                                     isAlertShown = true
                                 }
                             } label: {
+                                Image(systemName: "triangle.fill")
+                                    .foregroundColor(.green)
+                                    .font(.largeTitle)
                                 Text(TestQuizQuestions[questionIndex].option2)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(.green)
-                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.green)
                                     .cornerRadius(10)
                             }
                         }
@@ -69,12 +71,14 @@ struct ContentView: View {
                                 } else {
                                     alertMessage = "Incorrect."
                                     isAlertShown = true
-                                }                        } label: {
+                                }
+                            } label: {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.blue)
+                                    .font(.largeTitle)
                                     Text(TestQuizQuestions[questionIndex].option3)
-                                        .padding()
-                                        .frame(maxWidth: .infinity)
-                                        .background(.blue)
-                                        .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                        .foregroundColor(.blue)
                                         .cornerRadius(10)
                                 }
                             Button {
@@ -85,12 +89,14 @@ struct ContentView: View {
                                 } else {
                                     alertMessage = "Incorrect."
                                     isAlertShown = true
-                                }                        } label: {
+                                }
+                            } label: {
+                                Image(systemName: "diamond.fill")
+                                    .foregroundColor(.yellow)
+                                    .font(.largeTitle)
                                     Text(TestQuizQuestions[questionIndex].option4)
-                                        .padding()
-                                        .frame(maxWidth: .infinity)
-                                        .background(.yellow)
-                                        .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                        .foregroundColor(.yellow)
                                         .cornerRadius(10)
                                 }
                         }
