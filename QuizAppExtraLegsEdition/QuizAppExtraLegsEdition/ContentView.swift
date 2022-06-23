@@ -45,11 +45,12 @@ struct ContentView: View {
                                 Text(TestQuizQuestions[questionIndex].option1)
                                     .foregroundColor(.white)
                                     .font(.largeTitle)
-                                    .cornerRadius(10)
+                                    
                             }
-                            .frame(width: 150, height: 100)
+                            .frame(width: 200, height: 200)
                             .background(.red)
-                            .padding()
+                            .cornerRadius(10)
+
                             Button {
                                 if TestQuizQuestions[questionIndex].correctAns == 2{
                                     alertMessage = "Correct."
@@ -61,13 +62,17 @@ struct ContentView: View {
                                 }
                             } label: {
                                 Image(systemName: "triangle.fill")
-                                    .foregroundColor(.green)
+                                    .foregroundColor(.white)
                                     .font(.largeTitle)
                                 Text(TestQuizQuestions[questionIndex].option2)
                                     .font(.largeTitle)
-                                    .foregroundColor(.green)
+                                    .foregroundColor(.white)
                                     .cornerRadius(10)
                             }
+                            .frame(width: 200, height: 200)
+                            .background(.green)
+                            .cornerRadius(10)
+
                         }
                         HStack{
                             Button {
@@ -81,13 +86,17 @@ struct ContentView: View {
                                 }
                             } label: {
                                 Image(systemName: "circle.fill")
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.white)
                                     .font(.largeTitle)
                                     Text(TestQuizQuestions[questionIndex].option3)
                                     .font(.largeTitle)
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(.white)
                                         .cornerRadius(10)
                                 }
+                            .frame(width: 200, height: 200)
+                            .background(.blue)
+                            .cornerRadius(10)
+
                             Button {
                                 if TestQuizQuestions[questionIndex].correctAns == 4 {
                                     alertMessage = "Correct."
@@ -99,13 +108,17 @@ struct ContentView: View {
                                 }
                             } label: {
                                 Image(systemName: "diamond.fill")
-                                    .foregroundColor(.yellow)
+                                    .foregroundColor(.white)
                                     .font(.largeTitle)
                                     Text(TestQuizQuestions[questionIndex].option4)
                                     .font(.largeTitle)
-                                        .foregroundColor(.yellow)
+                                        .foregroundColor(.white)
                                         .cornerRadius(10)
                                 }
+                            .frame(width: 200, height: 200)
+                            .background(.yellow)
+                            .cornerRadius(10)
+
                         }
                         
                     }
