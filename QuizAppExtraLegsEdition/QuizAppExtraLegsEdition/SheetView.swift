@@ -10,11 +10,14 @@ import SwiftUI
 struct SheetView: View {
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
+                CircularProgress(progress: CGFloat(pointsCount) / CGFloat(5))
+                .frame(width: 150, height: 150)
+                .padding()
                 
                 Text("\(pointsCount)/5")
-                    .bold()
-                
+                    .padding()
+
             }
             .navigationTitle("Results")
         }

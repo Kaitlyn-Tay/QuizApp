@@ -15,7 +15,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.systemBackground)
+                LinearGradient(colors: [.white, .cyan], startPoint: .top, endPoint: .leading)
+                    .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .center) {
                     ProgressView(value: Double(questionIndex),
                                              total: Double(TestQuizQuestions.count))
@@ -39,13 +40,16 @@ struct ContentView: View {
                                 }
                             } label: {
                                 Image(systemName: "square.fill")
-                                    .foregroundColor(.red)
+                                    .foregroundColor(.white)
                                     .font(.largeTitle)
                                 Text(TestQuizQuestions[questionIndex].option1)
-                                    .foregroundColor(.red)
+                                    .foregroundColor(.white)
                                     .font(.largeTitle)
                                     .cornerRadius(10)
                             }
+                            .frame(width: 150, height: 100)
+                            .background(.red)
+                            .padding()
                             Button {
                                 if TestQuizQuestions[questionIndex].correctAns == 2{
                                     alertMessage = "Correct."
